@@ -62,6 +62,7 @@ function weatherUpd() {
 		.then((response) => response.json())
 		.then(function (data) {
 			location = data.location.name;
+			if (location == 'Moscow') location = 'Москва';
 			temp = data.current.temp_c;
 			condition = data.current.condition.text;
 			condIcon = data.current.condition.icon;
@@ -69,6 +70,4 @@ function weatherUpd() {
 			<h2>${location}, ${temp}°<br>${condition} <img class="cond-icon" src="${condIcon}" alt=""></h2>
 		`;
 		});
-
-
 }
