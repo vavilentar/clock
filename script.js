@@ -1,7 +1,9 @@
 const timeDiv = document.querySelector('.clock');
+const weatherDiv = document.querySelector('.weather');
 
 let updTime = setInterval(() => timeUpd(), 1000);
 timeUpd();
+weatherUpd();
 
 function timeUpd() {
 	let time = new Date();
@@ -49,4 +51,24 @@ function timeUpd() {
 	timeDiv.innerHTML = `
 		<h1>${dayOfWeek}, ${hour}:${minute}:${second}</h1>
 	`;
+}
+function weatherUpd() {
+
+	let temp;
+	let location;
+	let condition;
+	let condIcon;
+	fetch('http://api.weatherapi.com/v1/current.json?key=f1c58ace0a7b44a1b8b92424222206&q=Moscow&aqi=no')
+		.then((response) => response.json())
+		.then(function (data) {
+			location = data.location.name;
+			temp = data.current.temp_c;
+			condition = data.current.condition.text;
+			condIcon = data.current.condition.icon;
+			weatherDiv.innerHTML = `
+			<h2>${location}, ${temp}°<br>${condition} <img class="cond-icon" src="${condIcon}" alt=""></h2>
+		`;
+		});
+
+
 }
