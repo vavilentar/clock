@@ -57,18 +57,18 @@ function weatherUpd() {
 	let temp;
 	let location;
 	let condition;
-	let condIcon;
+	// let condIcon;
 	fetch('http://api.weatherapi.com/v1/current.json?key=f1c58ace0a7b44a1b8b92424222206&q=Moscow&aqi=no')
 		.then((response) => response.json())
 		.then(function (data) {
 			location = data.location.name;
 			temp = data.current.temp_c;
 			condition = data.current.condition.text;
-			condIcon = data.current.condition.icon;
+			// condIcon = data.current.condition.icon;
 			weatherDiv.innerHTML = `
-			<h2>${location}, ${temp}°<br>${condition} <img class="cond-icon" src="${condIcon}" alt=""></h2>
+			<h2>${location}, ${temp}°<br>${condition}</h2>
 		`;
 		});
-
-
 }
+
+//<img class="cond-icon" src="${condIcon}" alt="">
