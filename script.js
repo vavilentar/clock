@@ -59,7 +59,7 @@ function weatherUpd() {
 	let condition;
 	let condIcon;
 	let conditionTranslate = '';
-	fetch('https://api.weatherapi.com/v1/current.json?key=f1c58ace0a7b44a1b8b92424222206&q=Москва&aqi=no')
+	fetch('https://api.weatherapi.com/v1/current.json?key=f1c58ace0a7b44a1b8b92424222206&q=Москва&aqi=no&lang=ru')
 		.then((response) => response.json())
 		.then(function (data) {
 			location = data.location.name;
