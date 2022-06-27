@@ -58,13 +58,18 @@ function weatherUpd() {
 	let location;
 	let condition;
 	let condIcon;
-	fetch('http://api.weatherapi.com/v1/current.json?key=f1c58ace0a7b44a1b8b92424222206&q=Moscow&aqi=no')
+	let conditionTranslate = '';
+	fetch('https://api.weatherapi.com/v1/current.json?key=f1c58ace0a7b44a1b8b92424222206&q=Москва&aqi=no')
 		.then((response) => response.json())
 		.then(function (data) {
 			location = data.location.name;
-			if (location == 'Moscow') location = 'Москва';
 			temp = data.current.temp_c;
 			condition = data.current.condition.text;
+			// switch (condition) {
+			// 	case 'Sunny': conditionTranslate = 'Солнечно';
+			// 	break;
+
+			// }
 			condIcon = data.current.condition.icon;
 			weatherDiv.innerHTML = `
 			<h2>${location}, ${temp}°<br>${condition} <img class="cond-icon" src="${condIcon}" alt=""></h2>
