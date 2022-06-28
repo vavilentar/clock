@@ -1,5 +1,6 @@
 const timeDiv = document.querySelector('.clock');
 const weatherDiv = document.querySelector('.weather');
+const bodyDiv = document.querySelector('.body_container');
 
 let updTime = setInterval(() => timeUpd(), 1000);
 timeUpd();
@@ -7,8 +8,9 @@ weatherUpd();
 
 function timeUpd() {
 	let time = new Date();
-
 	let dayOfWeek = time.getDay();
+	let date = time;
+
 	switch (dayOfWeek) {
 		case 1:
 			dayOfWeek = 'Понедельник';
@@ -48,10 +50,22 @@ function timeUpd() {
 	if (second < 10) {
 		second = '0' + second;
 	}
-	timeDiv.innerHTML = `
-		<h1>${dayOfWeek}, ${hour}:${minute}:${second}</h1>
-	`;
+
+	// if (time.getHours() > 8 || time.getHours() < 22 ) {
+		// bodyDiv.classList.remove('night');
+		// bodyDiv.classList.add('day');
+		timeDiv.innerHTML = `
+		<h2>${date.toLocaleDateString()}</h2><br><h1 class="date-time">${dayOfWeek}, ${hour}:${minute}:${second}</h1>`;
+		
+	// } else {
+	// 	bodyDiv.classList.remove('day');
+	// 	bodyDiv.classList.add('night');
+	// 	timeDiv.innerHTML = `
+	// 	<h2>${date.toLocaleDateString()}</h2><br><h1 class="date-time">${dayOfWeek}, ${hour}:${minute}:${second}</h1>`;
+	// }
+
 }
+
 function weatherUpd() {
 
 	let temp;
@@ -72,7 +86,7 @@ function weatherUpd() {
 			// }
 			condIcon = data.current.condition.icon;
 			weatherDiv.innerHTML = `
-			<h2>${location}, ${temp}°<br>${condition} <img class="cond-icon" src="${condIcon}" alt=""></h2>
+			<h2>${location}, ${temp}°<br>${condition} <img class="cond-icon" src="${condIcon}" alt=""></img></h2>
 		`;
 		});
 }

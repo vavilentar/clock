@@ -2,54 +2,49 @@
 
 body {
 	font-family: Ubuntu;
-	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
 }
 
 .clock {
 	text-align: center;
 	color: white;
 	position: relative;
-	height: 100vh;
+}
+
+h1, h2, h3 {
+	margin: 0px 0px 0px 0px;
+	color: white;
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+		0px 8px 13px rgba(0, 0, 0, 0.1),
+		0px 18px 23px rgba(0, 0, 0, 0.1);
+	text-align: center;
 }
 
 h1 {
-	margin: 0px 0px 0px 0px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate3d(-50%, -50%, 0);
 	font-size: 72px;
-	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
-		0px 8px 13px rgba(0, 0, 0, 0.1),
-		0px 18px 23px rgba(0, 0, 0, 0.1);
-
-}
-
-@media (max-width: 426px) {
-	h1 {
-		font-size: 45px;
-	}
-}
-
-.weather {
-	position: absolute;
-	left: 50%;
-	top: 70%;
-	transform: translate3d(-50%, -50%, 0);
 }
 
 h2 {
-	color: white;
-	text-align: center;
+	font-size: 42px;
+}
+
+.weather {
 	position: relative;
-	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
-		0px 8px 13px rgba(0, 0, 0, 0.1),
-		0px 18px 23px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.date-time {
+	margin-bottom: 25px;
 }
 
 .cond-icon {
 	position: absolute;
-	top: 0%;
-	right: -35%;
+	top: 25%;
 }
