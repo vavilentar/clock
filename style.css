@@ -1,85 +1,38 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:regular);
+@font-face {
+	font-family: 'Clocks';
+	src: url(./digital-7.ttf);
+	font-weight: normal;
+	font-style: normal;
+ }
 
 body {
-	font-family: Ubuntu;
+	user-select: none;
+	font-family: Clocks;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+	background: black;
 }
 
 .clock {
 	text-align: center;
-	color: white;
+	color: rgba(102, 255, 0, 0.8);
 	position: relative;
 }
 
 h1, h2, h3 {
-	margin: 0px 0px 0px 0px;
-	color: white;
+	margin: 0 auto;
 	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
 		0px 8px 13px rgba(0, 0, 0, 0.1),
 		0px 18px 23px rgba(0, 0, 0, 0.1);
 	text-align: center;
+	font-size: 5em;
 }
-
-h1 {
-	position: relative;
-	font-size: 72px;
-}
-h1::after {
-	position: absolute;
-	content: '';
-	height: 4px;
-	width: 100%;
-	background-color: white;
-	box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
-	0px 8px 13px rgba(0, 0, 0, 0.1),
-	0px 18px 23px rgba(0, 0, 0, 0.1);
-	bottom: -12%;
-	left: 0;
-	border-radius: 20px;
-}
-
-/* 
-.weather::after {
-	position: absolute;
-	content: '';
-	height: 10px;
-	width: 10px;
-	background: white;
-
-	box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
-	0px 8px 13px rgba(0, 0, 0, 0.1),
-	0px 18px 23px rgba(0, 0, 0, 0.1);
-	border-radius: 100%;
-	top: -15%;
-
-	animation: dotMove infinite alternate-reverse 1s linear;
-} */
-
-/* @keyframes dotMove {
-	from {
-		left: 25%
-	}
-
-	to {
-		left: 75%
-	}
-} */
 
 h2 {
-	font-size: 42px;
-}
-
-.weather {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-
+	font-size: 2.5em;
 }
 
 .date-time {
